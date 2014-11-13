@@ -38,3 +38,5 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem "letter_opener", :group => :development
+gem "friendly_id", '~> 5.0.0'

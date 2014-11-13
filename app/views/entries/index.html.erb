@@ -1,10 +1,23 @@
-<h1> <%= @project.name %> </h1>
-<ul>
-	<% @entries.each  do |entry| %>
-		<li>
-			<%= entry.hours %> h
-			<%= entry.minutes %> m - 
-			<%= entry.date %>
-		</li>
-	<% end %>
-</ul>
+<div class "row mtop">
+  	<div class="col-md-4 col-md-offset-4 bgray" style="padding: 30px">
+		<% if flash[:notice] %>
+			<%= flash[:notice] %>
+		<% end %>
+
+		<h1><%= @project.name %></h1>
+		<ul>
+		 <% @entries.each do |entry| %>
+		   <li>
+		       <%= entry.hours %> h
+		       <%= entry.minutes %> m -
+		       <%= entry.date %>
+		       <%= link_to('Edit', edit_project_entry_path(@project, entry)) %>
+
+		       <%= link_to('Delete', project_entry_path(@project, entry), method: :delete, data: {confirm: "Are your sure?"}) %>
+		   </li>
+		 <% end %>
+		</ul>
+		<%= link_to('Index', projects_path(), class: "btn btn-default btn-sm") %>
+		<%= link_to('New entry', new_project_entry_path(),  class: "btn btn-success btn-sm") %>
+	</div>
+</div>

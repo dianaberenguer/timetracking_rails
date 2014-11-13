@@ -13,3 +13,12 @@
  *= require_self
  *= require_tree .
  */
+
+.mtop {
+	margin-top: 10px;
+}
+
+.bgray {
+	background-color: #f4f4f4;
+	border-radius: 4px;
+}
