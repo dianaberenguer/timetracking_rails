@@ -1,4 +1,7 @@
 class ProjectsController < ApplicationController
+
+before_action :authenticate_user!
+
 	def index
 		@projects = Project.last_created_projects(10)
 		if @projects.empty?
