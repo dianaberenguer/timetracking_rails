@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
   get '/contact' => 'site#contact'
-
-  get '/' => 'site#home'
-
+  root to: 'site#home'
   resources :projects do
     resources :entries
   end
