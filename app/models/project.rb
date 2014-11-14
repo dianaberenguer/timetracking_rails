@@ -3,7 +3,7 @@ class Project < ActiveRecord::Base
 	# 	where(id: id).first
 		# end
 
-	belongs_to :user
+	belongs_to :group
 	has_many :entries
 
 	validates :name, presence: true
