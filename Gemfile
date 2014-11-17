@@ -42,3 +42,7 @@ gem "letter_opener", :group => :development
 gem "friendly_id", '~> 5.0.0'
 
 gem 'devise'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+end
